@@ -5,6 +5,7 @@ import requests
 
 
 
+
 # Initializing flask app
 app = Flask(__name__)
   
@@ -22,9 +23,8 @@ def getbroker():
         "topic" : "test",
         "data" : "This is test data"
     }
-    print(json.dumps(data))
     pos = requests.post(url,json=data)
-    print(pos.status_code)
+    return str(pos.status_code)
 
 
 
@@ -45,6 +45,6 @@ def getbroker():
 
 
 # Running app
-if __name__ == '__main__':
-    app.run(host="0.0.0.0",port=4000,debug=True)
-    getbroker()
+def run(portd):
+    app.run(host="0.0.0.0",port=portd,debug=False)
+    
