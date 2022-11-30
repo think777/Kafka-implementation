@@ -17,10 +17,13 @@ def getbroker():
     y = json.loads(x.text)
     global url
     url = y["url"]
-    return url
+    data = {
+        topic : "test",
+        data : "This is test data"
+    }
+    pos = requests.post(url,jsonify(data))
+    return(pos.json())
 
-
-@app.route()
 
 
 
