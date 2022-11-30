@@ -15,11 +15,25 @@ def print_cube(num):
 
 
 if __name__ =="__main__":
-	# creating thread
-	t1 = threading.Thread(target=print_cube, args=(4000,))
-	t2 = threading.Thread(target=print_cube, args=(4001,))
+	
+	# creating an empty list
+	
+	name = {}
+# number of elements as input
+	n = int(input("Enter number of producers : "))
+# iterating till the range
+	for i in range(0, n):
+		s = (input("Enter name of producer : "))
+		ele = int(input("Enter port number : "))
+		name[s] = ele # adding the element
 
-	# starting thread 1
-	t1.start()
-	# starting thread 2
-	t2.start()
+	
+
+	# creating thread
+	for key, value in name.items():
+		key = threading.Thread(target=print_cube, args=(value,))
+		# starting thread 1
+		key.start()
+
+	
+	
