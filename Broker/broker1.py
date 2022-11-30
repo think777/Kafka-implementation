@@ -14,16 +14,17 @@ user = ""
 @app.route('/post', methods=['POST'])
 def recieve():
     if request.method == 'POST':
-        print (request.is_json)
+        #print (request.is_json)
         user = request.get_json()
-        print (content)
+        d = "data recieved"
+        #print (user)
         #user = request.form['topic']
         #return jsonpickle.encode(user)
-
+        return jsonify(d)
 
 @app.route('/list')
 def listing():
-    return jsonify(user)
+    return user
 
 
 

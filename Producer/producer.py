@@ -22,8 +22,9 @@ def getbroker():
         "topic" : "test",
         "data" : "This is test data"
     }
-    pos = requests.post(url,json.dumps(data))
-    return (pos)
+    print(json.dumps(data))
+    pos = requests.post(url,json=data)
+    print(pos.status_code)
 
 
 
