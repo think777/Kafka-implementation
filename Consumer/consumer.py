@@ -11,13 +11,15 @@ app.config['CORS_HEADERS'] = 'Content-Type'
 
 topic = ""
 
-@app.route('/')
+@app.route('/req')
 def getbroker():
+    args = request.args
+    k = args.get("topic")
     x = requests.get('http://localhost:5000/bro')
     y = json.loads(x.text)
     global url
     url = y["url"]
-    url = url + "/req"
+    url = url + "/req?topic=" + k
     res = requests.get(url)
     return json.loads(res.text)
 
