@@ -24,6 +24,10 @@ def getbroker():
         "data" : "This is test data"
     }
     pos = requests.post(url,json=data)
+    
+    if (pos.status_code != 200):
+        pos = requests.post(url,json=data)
+
     return str(pos.status_code)
 
 
