@@ -20,7 +20,7 @@ def getbroker():
     url = y["url"]
     url = url + "/post"
     data = {
-        "topic" : "test",
+        "topic" : "second",
         "data" : "This is test data"
     }
     pos = requests.post(url,json=data)
