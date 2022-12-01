@@ -20,7 +20,7 @@ def recieve():
         user = request.get_json()
         d = "data recieved"
         with open('sampledata.json', 'a+') as outfile:
-            json.dump(user, outfile)
+            json.dumps(user, outfile)
         #print (user)
         #user = request.form['topic']
         #return jsonpickle.encode(user)

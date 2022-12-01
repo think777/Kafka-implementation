@@ -9,6 +9,7 @@ app = Flask(__name__)
 cors = CORS(app)  
 app.config['CORS_HEADERS'] = 'Content-Type'
 
+topic = ""
 
 @app.route('/')
 def getbroker():
@@ -37,5 +38,6 @@ def getbroker():
 
 
 # Running app
-if __name__ == '__main__':
-    app.run(host="0.0.0.0",port=4500,debug=True)
+def run(portd):
+    app.run(host="0.0.0.0",port=portd,debug=False)
+    
