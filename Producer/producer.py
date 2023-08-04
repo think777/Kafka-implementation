@@ -30,8 +30,8 @@ def getbroker():
     url = y["url"]
     url = url + "/post"
     data = {
-        "topic" : "second",
-        "data" : "This is test data"
+        "topic" : "third",
+        "data" : "This is test1"
     }
     pos = requests.post(url,json=data)
     
